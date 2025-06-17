@@ -37,6 +37,12 @@ dependencies {
 	implementation("io.jsonwebtoken:jjwt-api:0.11.5")
 	runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
 	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
+	// Lombok 라이브러리 추가
+	compileOnly("org.projectlombok:lombok")
+	annotationProcessor("org.projectlombok:lombok")
+	// 공간 데이터 처리를 위한 라이브러리
+	implementation("org.hibernate.orm:hibernate-spatial:6.4.4.Final")
+	implementation("org.locationtech.jts:jts-core:1.19.0")    // JTS (Java Topology Suite)
 }
 
 tasks.withType<Test> {

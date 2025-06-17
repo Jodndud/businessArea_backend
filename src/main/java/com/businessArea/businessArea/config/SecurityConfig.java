@@ -6,6 +6,7 @@ import com.businessArea.businessArea.jwt.JwtUtil;
 import com.businessArea.businessArea.security.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -53,25 +54,40 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // CSRF 설정 비활성화
         http.csrf((csrf) -> csrf.disable());
 
-        // 기본 설정인 세션 방식은 사용하지 않고 JWT 방식을 사용하기 위한 설정
+        // 세션 방식 대신 JWT 방식 사용 설정
         http.sessionManagement((sessionManagement) ->
                 sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         );
 
         http.authorizeHttpRequests((authorizeHttpRequests) ->
                 authorizeHttpRequests
-                        // 아래의 주소들은 인증 없이 누구나 접근할 수 있도록 허용
+                        // 접근 허용
                         .requestMatchers("/api/signup/**", "/api/login").permitAll()
-                        .requestMatchers("/api/sido", "/api/sigungu", "/api/adong").permitAll() // 데이터 조회 API도 허용
-                        // 그 외의 모든 요청은 인증이 필요
+                        // 데이터 조회 접근 허용
+                        .requestMatchers(HttpMethod.GET, "/api/sido", "/api/sigungu").permitAll()
+                        // 데이터 저장 API (관리자용 - 지금은 편의상 허용, 나중에 권한 설정 필요)
+                        .requestMatchers("/api/admin/addresses/update", "/api/admin/addresses/update-boundaries",
+                                "/api/admin/schools/update", "/api/admin/schools/update/school-student-counts",
+                                "/api/admin/industry/save-lcls", "/api/admin/industry/save-mcls", "/api/admin/industry/save-scls").permitAll()
+                        // 그 외의 모든 요청은 인증 필요
                         .anyRequest().authenticated()
         );
 
-        // 우리가 직접 만든 필터를 Security Filter Chain에 등록
+        // 로그아웃 설정
+        http.logout((logout) -> logout
+                .logoutUrl("/api/logout")
+                .logoutSuccessHandler((request, response, authentication) -> {
+                    response.setStatus(200);
+                    response.getWriter().write("로그아웃 되었습니다.");
+                })
+                .permitAll()
+        );
+
+        // 직접 만든 필터를 Security Filter Chain에 등록
         http.addFilterBefore(jwtAuthorizationFilter(), JwtAuthenticationFilter.class);
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 

@@ -1,16 +1,8 @@
-package com.businessArea.businessArea.repository;
+package com.businessArea.businessArea.repository; // 패키지 위치
 
-import com.businessArea.businessArea.domain.Sido;
 import com.businessArea.businessArea.domain.Sigungu;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-import java.util.List;
-
-@Repository
 public interface SigunguRepository extends JpaRepository<Sigungu, Long> {
-    Optional<Sigungu> findBySigunguCd(String sigunguCd);
-
-    List<Sigungu> findAllBySido(Sido sido);
+    // Sigungu 엔티티에 대한 DB 작업을 위한 인터페이스
 }

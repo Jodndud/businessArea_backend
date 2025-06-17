@@ -1,15 +1,13 @@
-package com.businessArea.businessArea.repository;
+package com.businessArea.businessArea.repository; // 패키지 위치
 
 import com.businessArea.businessArea.domain.Adong;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import java.util.Optional;
-import com.businessArea.businessArea.domain.Sigungu;
+
+import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
-@Repository
 public interface AdongRepository extends JpaRepository<Adong, Long> {
-    Optional<Adong> findByAdongCd(String adongCd);
-
-    List<Adong> findAllBySigungu(Sigungu sigungu);
+    // 모든 Adong 데이터를 가져올 때, 연관된 Sigungu와 Sido를 함께 fetch join 하여 가져옴
+    @Query("SELECT a FROM Adong a JOIN FETCH a.sigungu s JOIN FETCH s.sido")
+    List<Adong> findAllWithSigunguAndSido();
 }

@@ -1,50 +1,34 @@
 package com.businessArea.businessArea.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
+@NoArgsConstructor // JPA는 기본 생성자가 필수입니다.
+@Table(name = "sido")
 public class Sido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "sido_id") // DB 테이블의 컬럼명을 명확히 지정
-    private Long id;
+    @Column(name = "sido_id")
+    private Long sidoId;
 
-    @Column(name = "ctprvn_cd", unique = true) // 시도 코드는 고유해야 하므로 unique = true 추가
-    private String ctprvnCd;
+    @Column(name = "cd", unique = true, nullable = false)
+    private String cd; // 시도 코드
 
-    @Column(name = "ctprvn_nm") // 시도 이름
-    private String ctprvnNm;
+    @Column(name = "addr_name", nullable = false)
+    private String addrName; // 시도명
 
-    // '일대다' 관계 설정: 하나의 시도(Sido)는 여러개의 시군구(Sigungu)를 가짐
     @OneToMany(mappedBy = "sido", cascade = CascadeType.ALL)
     private List<Sigungu> sigungus = new ArrayList<>();
 
-    // --- Constructors, Getters ---
-
-    protected Sido() {
-    }
-
-    public Sido(String ctprvnCd, String ctprvnNm) {
-        this.ctprvnCd = ctprvnCd;
-        this.ctprvnNm = ctprvnNm;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getCtprvnCd() {
-        return ctprvnCd;
-    }
-
-    public String getCtprvnNm() {
-        return ctprvnNm;
-    }
-
-    public List<Sigungu> getSigungus() {
-        return sigungus;
+    // AddressService에서 사용할 생성자
+    public Sido(String cd, String addrName) {
+        this.cd = cd;
+        this.addrName = addrName;
     }
 }
