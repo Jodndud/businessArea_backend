@@ -16,20 +16,21 @@ public class IndsScls {
     @Column(name = "sm_id")
     private Long id;
 
-    @Column(name = "inds_scls_cd", nullable = false, unique = true)
+    // 다른 대분류에 동일한 소분류 코드가 존재할 수 있으므로 unique 제약조건을 제거합니다.
+    @Column(name = "inds_scls_cd", nullable = false)
     private String indsSclsCd; // 소분류코드
 
     @Column(name = "inds_scls_nm", nullable = false)
     private String indsSclsNm; // 소분류명
 
-    // IndsMcls(중분류)와의 다대일(N:1) 관계 설정
+    // 대분류(IndsLcls)와의 다대일(N:1) 관계 설정
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "md_id") // ERD의 M-id를 참조
-    private IndsMcls indsMcls;
+    @JoinColumn(name = "lg_id") // DB의 외래 키 컬럼명
+    private IndsLcls indsLcls;
 
-    public IndsScls(String indsSclsCd, String indsSclsNm, IndsMcls indsMcls) {
+    public IndsScls(String indsSclsCd, String indsSclsNm, IndsLcls indsLcls) {
         this.indsSclsCd = indsSclsCd;
         this.indsSclsNm = indsSclsNm;
-        this.indsMcls = indsMcls;
+        this.indsLcls = indsLcls;
     }
 }

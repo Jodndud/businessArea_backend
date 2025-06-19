@@ -5,10 +5,13 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "inds_lcls") // 테이블명은 보통 snake_case를 사용합니다.
+@Table(name = "inds_lcls")
 public class IndsLcls {
 
     @Id
@@ -21,6 +24,10 @@ public class IndsLcls {
 
     @Column(name = "inds_lcls_nm", nullable = false)
     private String indsLclsNm; // 대분류명
+
+    // 소분류(IndsScls)와의 일대다(1:N) 관계 설정
+    @OneToMany(mappedBy = "indsLcls", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<IndsScls> indsSclsList = new ArrayList<>();
 
     public IndsLcls(String indsLclsCd, String indsLclsNm) {
         this.indsLclsCd = indsLclsCd;

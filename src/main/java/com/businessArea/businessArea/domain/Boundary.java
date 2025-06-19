@@ -1,13 +1,15 @@
+// 📁 domain/Boundary.java
 package com.businessArea.businessArea.domain;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.locationtech.jts.geom.Polygon;
 
 @Entity
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "boundary")
 public class Boundary {
 
@@ -16,7 +18,8 @@ public class Boundary {
     @Column(name = "boundary_id")
     private Long boundaryId;
 
-    // 필드 타입을 Polygon으로 변경하고, DB 컬럼 타입을 GEOMETRY로 지정
+    // GEOMETRY 타입은 대용량일 수 있으므로 @Lob 어노테이션 추가
+    @Lob
     @Column(name = "coordinates", columnDefinition = "GEOMETRY")
     private Polygon coordinates;
 
@@ -24,7 +27,6 @@ public class Boundary {
     @JoinColumn(name = "adong_id")
     private Adong adong;
 
-    // 생성자도 Polygon 타입을 받도록 수정
     public Boundary(Polygon coordinates, Adong adong) {
         this.coordinates = coordinates;
         this.adong = adong;

@@ -1,0 +1,165 @@
+[
+  {
+    "inds_lcls_cd": "A",
+    "inds_lcls_nm": "농림어업",
+    "inds_scls": [
+      { "inds_scls_cd": "A001", "inds_scls_nm": "농업" },
+      { "inds_scls_cd": "A002", "inds_scls_nm": "임업" },
+      { "inds_scls_cd": "A003", "inds_scls_nm": "어업" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "B",
+    "inds_lcls_nm": "기업",
+    "inds_scls": [
+      { "inds_scls_cd": "8001", "inds_scls_nm": "제조/화학" },
+      { "inds_scls_cd": "8002", "inds_scls_nm": "서비스" },
+      { "inds_scls_cd": "8003", "inds_scls_nm": "통신/IT" },
+      { "inds_scls_cd": "8004", "inds_scls_nm": "건설" },
+      { "inds_scls_cd": "8005", "inds_scls_nm": "판매/유통" },
+      { "inds_scls_cd": "8006", "inds_scls_nm": "기타금융업" },
+      { "inds_scls_cd": "8008", "inds_scls_nm": "문화/체육" },
+      { "inds_scls_cd": "B001", "inds_scls_nm": "전기/가스/수도" },
+      { "inds_scls_cd": "B002", "inds_scls_nm": "환경" },
+      { "inds_scls_cd": "B003", "inds_scls_nm": "방송/미디어" },
+      { "inds_scls_cd": "B004", "inds_scls_nm": "연구개발" },
+      { "inds_scls_cd": "B005", "inds_scls_nm": "협회 및 단체" },
+      { "inds_scls_cd": "B006", "inds_scls_nm": "광업" },
+      { "inds_scls_cd": "B007", "inds_scls_nm": "운송" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "C",
+    "inds_lcls_nm": "소매업",
+    "inds_scls": [
+      { "inds_scls_cd": "1001", "inds_scls_nm": "인테리어" },
+      { "inds_scls_cd": "2001", "inds_scls_nm": "문구점" },
+      { "inds_scls_cd": "2002", "inds_scls_nm": "서점" },
+      { "inds_scls_cd": "2003", "inds_scls_nm": "편의점" },
+      { "inds_scls_cd": "2004", "inds_scls_nm": "식료품점" },
+      { "inds_scls_cd": "2005", "inds_scls_nm": "휴대폰점" },
+      { "inds_scls_cd": "2006", "inds_scls_nm": "의류" },
+      { "inds_scls_cd": "2007", "inds_scls_nm": "화장품/방향제" },
+      { "inds_scls_cd": "2008", "inds_scls_nm": "철물점" },
+      { "inds_scls_cd": "2009", "inds_scls_nm": "주유소" },
+      { "inds_scls_cd": "2010", "inds_scls_nm": "꽃집" },
+      { "inds_scls_cd": "2011", "inds_scls_nm": "슈퍼마켓" },
+      { "inds_scls_cd": "9001", "inds_scls_nm": "백화점/종합형마트" },
+      { "inds_scls_cd": "C001", "inds_scls_nm": "가구" },
+      { "inds_scls_cd": "C002", "inds_scls_nm": "가전제품" },
+      { "inds_scls_cd": "C003", "inds_scls_nm": "통신판매" },
+      { "inds_scls_cd": "C004", "inds_scls_nm": "신발" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "D",
+    "inds_lcls_nm": "생활서비스",
+    "inds_scls": [
+      { "inds_scls_cd": "1002", "inds_scls_nm": "목욕탕" },
+      { "inds_scls_cd": "1007", "inds_scls_nm": "이발소" },
+      { "inds_scls_cd": "1006", "inds_scls_nm": "부동산중개업" },
+      { "inds_scls_cd": "1008", "inds_scls_nm": "미용실" },
+      { "inds_scls_cd": "1009", "inds_scls_nm": "세탁소" },
+      { "inds_scls_cd": "9002", "inds_scls_nm": "은행" },
+      { "inds_scls_cd": "D001", "inds_scls_nm": "생활용품임대" },
+      { "inds_scls_cd": "D002", "inds_scls_nm": "독서실" },
+      { "inds_scls_cd": "D003", "inds_scls_nm": "생활용품수리" },
+      { "inds_scls_cd": "D004", "inds_scls_nm": "카센터" },
+      { "inds_scls_cd": "D005", "inds_scls_nm": "피부/미용" },
+      { "inds_scls_cd": "D006", "inds_scls_nm": "마사지" },
+      { "inds_scls_cd": "D007", "inds_scls_nm": "택배/배달" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "E",
+    "inds_lcls_nm": "교통",
+    "inds_scls": [
+      { "inds_scls_cd": "3001", "inds_scls_nm": "지하철역" },
+      { "inds_scls_cd": "3002", "inds_scls_nm": "터미널" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "F",
+    "inds_lcls_nm": "여가생활",
+    "inds_scls": [
+      { "inds_scls_cd": "1010", "inds_scls_nm": "PC방" },
+      { "inds_scls_cd": "1011", "inds_scls_nm": "노래방" },
+      { "inds_scls_cd": "9004", "inds_scls_nm": "극장/영화관" },
+      { "inds_scls_cd": "9005", "inds_scls_nm": "도서관/박물관" },
+      { "inds_scls_cd": "F001", "inds_scls_nm": "생활체육시설" },
+      { "inds_scls_cd": "F002", "inds_scls_nm": "여행사" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "G",
+    "inds_lcls_nm": "숙박",
+    "inds_scls": [
+      { "inds_scls_cd": "4001", "inds_scls_nm": "호텔" },
+      { "inds_scls_cd": "4002", "inds_scls_nm": "여관(모텔포함) 및 여인숙" },
+      { "inds_scls_cd": "4003", "inds_scls_nm": "펜션" },
+      { "inds_scls_cd": "G001", "inds_scls_nm": "민박" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "H",
+    "inds_lcls_nm": "음식",
+    "inds_scls": [
+      { "inds_scls_cd": "5001", "inds_scls_nm": "한식" },
+      { "inds_scls_cd": "5002", "inds_scls_nm": "중식" },
+      { "inds_scls_cd": "5003", "inds_scls_nm": "일식" },
+      { "inds_scls_cd": "5004", "inds_scls_nm": "분식" },
+      { "inds_scls_cd": "5005", "inds_scls_nm": "서양식" },
+      { "inds_scls_cd": "5006", "inds_scls_nm": "제과점" },
+      { "inds_scls_cd": "5007", "inds_scls_nm": "패스트푸드" },
+      { "inds_scls_cd": "5008", "inds_scls_nm": "치킨" },
+      { "inds_scls_cd": "5009", "inds_scls_nm": "호프 및 간이주점" },
+      { "inds_scls_cd": "5010", "inds_scls_nm": "카페" },
+      { "inds_scls_cd": "5011", "inds_scls_nm": "기타 외국식" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "I",
+    "inds_lcls_nm": "교육",
+    "inds_scls": [
+      { "inds_scls_cd": "1003", "inds_scls_nm": "고시학원" },
+      { "inds_scls_cd": "1004", "inds_scls_nm": "어학원" },
+      { "inds_scls_cd": "1005", "inds_scls_nm": "예체능학원" },
+      { "inds_scls_cd": "7001", "inds_scls_nm": "초등학교" },
+      { "inds_scls_cd": "7002", "inds_scls_nm": "중학교" },
+      { "inds_scls_cd": "7003", "inds_scls_nm": "고등학교" },
+      { "inds_scls_cd": "7004", "inds_scls_nm": "전문대학" },
+      { "inds_scls_cd": "7005", "inds_scls_nm": "대학교" },
+      { "inds_scls_cd": "7006", "inds_scls_nm": "대학원" },
+      { "inds_scls_cd": "7007", "inds_scls_nm": "어린이보육업" },
+      { "inds_scls_cd": "I001", "inds_scls_nm": "기술직업훈련" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "J",
+    "inds_lcls_nm": "의료",
+    "inds_scls": [
+      { "inds_scls_cd": "9003", "inds_scls_nm": "병원" },
+      { "inds_scls_cd": "J001", "inds_scls_nm": "동물병원" },
+      { "inds_scls_cd": "J002", "inds_scls_nm": "약국" },
+      { "inds_scls_cd": "J003", "inds_scls_nm": "한방병원" },
+      { "inds_scls_cd": "8007", "inds_scls_nm": "기타의료업" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "K",
+    "inds_lcls_nm": "공공",
+    "inds_scls": [
+      { "inds_scls_cd": "6001", "inds_scls_nm": "우체국" },
+      { "inds_scls_cd": "6002", "inds_scls_nm": "행정기관" },
+      { "inds_scls_cd": "6003", "inds_scls_nm": "경찰/지구대" },
+      { "inds_scls_cd": "6004", "inds_scls_nm": "소방서" }
+    ]
+  },
+  {
+    "inds_lcls_cd": "99",
+    "inds_lcls_nm": "기타",
+    "inds_scls": [
+      { "inds_scls_cd": "9900", "inds_scls_nm": "기타" }
+    ]
+  }
+]

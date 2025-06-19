@@ -1,14 +1,15 @@
 package com.businessArea.businessArea.domain;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
-@NoArgsConstructor // JPA는 기본 생성자가 필수입니다.
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "sigungu")
 public class Sigungu {
 
@@ -28,9 +29,8 @@ public class Sigungu {
     private Sido sido;
 
     @OneToMany(mappedBy = "sigungu", cascade = CascadeType.ALL)
-    private List<Adong> adongs = new ArrayList<>();
+    private Set<Adong> adongs = new HashSet<>();
 
-    // AddressService에서 사용할 생성자
     public Sigungu(String cd, String addrName, Sido sido) {
         this.cd = cd;
         this.addrName = addrName;

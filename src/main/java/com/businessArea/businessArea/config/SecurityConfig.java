@@ -65,7 +65,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests((authorizeHttpRequests) ->
                 authorizeHttpRequests
-                        // 접근 허용
+                        // 인증 관련 접근 허용
                         .requestMatchers("/api/signup/**", "/api/login").permitAll()
                         // 데이터 조회 접근 허용
                         .requestMatchers(HttpMethod.GET, "/api/sido", "/api/sigungu").permitAll()
@@ -73,6 +73,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/admin/addresses/update", "/api/admin/addresses/update-boundaries",
                                 "/api/admin/schools/update", "/api/admin/schools/update/school-student-counts",
                                 "/api/admin/industry/save-lcls", "/api/admin/industry/save-mcls", "/api/admin/industry/save-scls").permitAll()
+                        // 데이터 요청 API(위치데이터 출력, 행정동정보 출력, 업종코드 출력)
+                        .requestMatchers("/districts/all", "/adong-details/{adongCode}", "/theme_code/all").permitAll()
                         // 그 외의 모든 요청은 인증 필요
                         .anyRequest().authenticated()
         );
