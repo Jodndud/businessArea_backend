@@ -1,6 +1,7 @@
 <p align="center">
   <img src="./title.png" width="400" alt="자리잡자 프로젝트 타이틀 이미지"/>
 </p>
+
 # 📈 자리잡자 (Jariring-Japja)
 
 > 청년 창업자를 위한 빅데이터 기반 상권 분석 및 파워(POWER) 지수 제공 서비스
