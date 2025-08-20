@@ -33,11 +33,11 @@ public class AdongDetailService {
         Adong adong = adongRepository.findByCdWithDetails(adongCode)
                 .orElseThrow(() -> new EntityNotFoundException("행정동 코드 " + adongCode + "를 찾을 수 없습니다."));
 
-        // ✅ 1. themeCode를 사용해 DB에서 업종 소분류 정보 조회
+        // 1. themeCode를 사용해 DB에서 업종 소분류 정보 조회
         Optional<IndsScls> sclsOptional = indsSclsRepository.findByIndsSclsCd(themeCode);
         String themeNameFromDb = sclsOptional.map(IndsScls::getIndsSclsNm).orElse(null); // 있으면 이름을, 없으면 null을 할당
 
-        // 2. 통계청 API 호출 (기존과 동일)
+        // 2. 통계청 API 호출
         String accessToken = kostatAuthService.getAccessToken();
         KostatStoreApiResponse apiResponse = webClient.get()
                 .uri(API_URL, uriBuilder -> uriBuilder
@@ -54,10 +54,11 @@ public class AdongDetailService {
                 ? apiResponse.getResult().get(0)
                 : new StoreStatsItemDto();
 
-        // ✅ 3. DTO를 생성할 때 DB에서 조회한 업종명을 함께 전달
+        // 3. DTO를 생성할 때 DB에서 조회한 업종명을 함께 전달
         StoreStatsDto finalStatsDto = new StoreStatsDto(statsItem, themeNameFromDb);
 
         // 4. 최종 응답 DTO 생성
         return new ComprehensiveAdongDto(adong, finalStatsDto);
     }
+
 }
